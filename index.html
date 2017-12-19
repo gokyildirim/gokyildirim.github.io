@@ -1,1 +1,27 @@
-Hello World
+<html lang="en">
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+    <script type"text/javascript">
+        function get_message(){
+
+            var url_string = window.location.href
+            var url = new URL(url_string);
+            var message = url.searchParams.get("message");
+
+            console.log(message);
+
+            var div_obj = document.getElementById("moving_text");
+
+            div_obj.innerHTML = '<p style="font-family: times, serif; font-size:160pt;">' + message + '</p>';
+        }
+    </script>
+<body>
+<marquee scrollamount="50">
+    <div id="moving_text"><p style="font-family: times, serif; font-size:160pt;">OK. FINE.</p></div>
+</marquee>
+<script type="text/javascript">get_message();</script>
+</body>
